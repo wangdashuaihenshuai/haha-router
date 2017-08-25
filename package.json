@@ -1,0 +1,20 @@
+{
+  "name": "haha-router",
+  "version": "0.0.1",
+  "description": "a simple router match.",
+  "main": "index.js",
+  "scripts": {
+    "test": "ava test"
+  },
+  "keywords": [
+    "router"
+  ],
+  "author": "jinhai.wang",
+  "devDependencies": {
+    "ava": "^0.19.1"
+  },
+  "dependencies": {
+    "lodash.flatmap": "^4.5.0"
+  },
+  "license": "MIT"
+}
