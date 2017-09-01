@@ -47,6 +47,7 @@ class Router {
   }
 
   addRoute(r) {
+    if (this.getRoute(r) !== null) return;
     const paths = r.split('/').map(p => p.trim()).filter(p => p !== '');
     let current = this.root;
     let u = '';
