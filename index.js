@@ -30,7 +30,7 @@ class Node {
   }
 
   addUrl(urlPath) {
-    this.urlNum ++;
+    this.urlNum++;
     if (this.isPath) return this.urlPaths.push(urlPath);
   }
 
@@ -44,6 +44,11 @@ class Node {
 class Router {
   constructor() {
     this.root = new Node('root');
+    this.routes = [];
+  }
+
+  dump() {
+    return this.routes;
   }
 
   addRoute(r) {
@@ -52,9 +57,10 @@ class Router {
     let current = this.root;
     let u = '';
     for (let p of paths) {
-      u = u + '/' + p;
+      u = u === '' ? p : u + '/' + p;
       current = current.addPath(p, u);
     }
+    this.routes.push(paths.join('/'));
     current.isEnd = true;
   }
 
